@@ -13,6 +13,6 @@ eval "use Test::CheckManifest $min_tcm";
 plan skip_all => "Test::CheckManifest $min_tcm required" if $@;
 
 ok_manifest({
-  exclude => ["/.gitignore", "/test.log"],
-  filter  => [qr/~$/],
+  exclude => ["/.gitignore", "/test.log", "/.git/"],
+  filter  => [qr/~$|Logging-Trivial-*/],
 });
